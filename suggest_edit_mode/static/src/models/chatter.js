@@ -9,8 +9,7 @@ registerPatch({
 	recordMethods: {
 
 		async showSuggestionPage() {
-			console.log("in here")
-			console.log(this.suggestionBoxView)
+			console.log(this)
 			if (this.suggestionBoxView) {
 				this.suggestionBoxView.update({ isSuggestionViewActive: !this.isSuggestionViewActive });
 				console.log(this.suggestionBoxView.isSuggestionViewActive)
@@ -23,6 +22,9 @@ registerPatch({
 				return {};
 			},
 			inverse: 'chatter',
+		}),
+		hasSuggestions: attr({
+			default: true,
 		})
 	}
 

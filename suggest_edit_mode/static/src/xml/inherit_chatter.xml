@@ -2,11 +2,13 @@
 
 <templates xml:space="preserve">
 	<t t-inherit="mail.Chatter" t-inherit-mode="extension">
-		<xpath expr="//t[contains(@t-if, 'chatter.activityBoxView')]" position="after">
+		<xpath expr="//t[contains(@t-if, 'chatter.activityBoxView')]" position="before">
 			<t t-if='chatter.suggestionBoxView'>
 				<SuggestionBox className="o_Chatter_suggestionBox" record="chatter.suggestionBoxView"/>
 			</t>
 		</xpath>
+		
+			<h2 class="o_edit_mode_banner">You are current in Suggest Mode</h2>
 
 	</t>
 </templates>

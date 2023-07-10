@@ -15,8 +15,14 @@
 						Suggestions </div>
 				</a>
 
-				<t t-if="!suggestionBoxView.isSuggestionViewActive">
-
+				<t t-if="suggestionBoxView.isSuggestionViewActive">
+					<div>I am here</div>
+					<div class="o_ActivityBox_activityList">
+						<t t-foreach="suggestionBoxView.suggestionViews" t-as="suggestionView"
+							t-key="SuggestionView.localId">
+							<Suggestion className="'o_ActivityBox_activity'" record="suggestionView" />
+						</t>
+					</div>
 				</t>
 
             </div>

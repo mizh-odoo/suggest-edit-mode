@@ -22,9 +22,22 @@ registerModel({
         chatter: one('Chatter', {
             identifying: true,
 			inverse: 'suggestionBoxView',
-        }),
+        }),	
         isSuggestionViewActive: attr({
             default: false,
         }),
+		suggestionViews: many('SuggestionView', {
+			compute() {
+				if (this.chatter.thread) {
+					return this.chatter.thread.suggestions.map(suggestion => {
+						return { suggestion }
+					})
+				} else{
+					return {};
+				}
+				
+			},
+			inverse: 'suggestionBoxView'
+		}),
     },
 });
