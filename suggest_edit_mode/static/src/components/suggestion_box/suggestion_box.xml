@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="suggest.SuggestionBox" owl="1">
+		<t t-if="suggestionBoxView">
+            <div class="o_SuggestionBox" t-attf-class="{{ className }}" t-ref="root">
+				<a href="#" role="button"
+					class="o_ActivityBox_title btn d-flex align-items-center p-0 w-100 fw-bold"
+					t-att-aria-expanded="suggestionBoxView.isSuggestionViewActive ? 'true' : 'false'"
+					t-on-click="suggestionBoxView.onClickActivityBoxTitle">
+					<hr class="o_ActivityBox_titleLine w-auto flex-grow-1 me-3" />
+					<div class="o_ActivityBox_titleText">
+						<i class="fa fa-fw"
+							t-att-class="suggestionBoxView.isSuggestionViewActive ? 'fa-caret-down' : 'fa-caret-right'" />
+						Suggestions </div>
+				</a>
+
+				<t t-if="!suggestionBoxView.isSuggestionViewActive">
+
+				</t>
+
+            </div>
+			
+
+			
+        </t>
+    </t>
+
+</templates>

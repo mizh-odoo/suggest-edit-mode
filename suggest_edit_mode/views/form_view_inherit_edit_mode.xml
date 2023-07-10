@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Extremely narrow for now, later will be on every view with chatter -->
+	<record id="form_view_inherit_edit_mode" model="ir.ui.view">
+		<field name="name">form.view.inherit.edit.mode</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//sheet" position="before">
+				<h2 class="o_edit_mode_banner">You are current in Suggest Mode</h2>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
